@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration.androidCompileSdkVersion
+    defaultConfig {
+        applicationId "com.cmitchell687.petlist"
+        minSdkVersion globalConfiguration.androidMinSdkVersion
+        targetSdkVersion globalConfiguration.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+
+    implementation project(':core')
+
+    implementation "com.squareup.picasso:picasso:${rootProject.ext.picasso}"
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.androidSupportLibrary}"
+    implementation "com.android.support:design:${rootProject.ext.androidSupportLibrary}"
+    implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.androidConstraintLayout}"
+    implementation "android.arch.lifecycle:extensions:${rootProject.ext.androidArchLifecycle}"
+    annotationProcessor "android.arch.lifecycle:compiler:${rootProject.ext.androidArchLifecycle}"
+
+
+    // Tests
+    testImplementation "junit:junit:${rootProject.ext.junit}"
+    testImplementation "org.mockito:mockito-core:${rootProject.ext.mockito}"
+    testImplementation "android.arch.core:core-testing:${rootProject.ext.androidArchLifecycle}"
+    androidTestImplementation "com.android.support.test:runner:${rootProject.ext.supportTestRunner}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${rootProject.ext.espresso}"
+}

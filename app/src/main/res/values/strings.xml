@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Pet List</string>
+
+    <!-- Pets List View -->
+    <string name="pets_list_no_pets">No pets added yet.\nTap the button below to get started!</string>
+    <string name="pets_list_search">Search</string>
+    <string name="pets_list_title">Pet List</string>
+
+    <!-- Add Pets View -->
+    <string name="add_pets_instructions">Add a pet by entering the information below and clicking "OK"</string>
+    <string name="add_pets_pet_name">Pet name:</string>
+    <string name="add_pets_owner_name">Owner name:</string>
+    <string name="add_pets_pick_photo">Pick Photo</string>
+    <string name="add_pets_ok">OK</string>
+    <string name="add_pets_title">Add a Pet</string>
+    <string name="add_pets_missing_fields">Ruh roh! Looks like you\'re missing a field, check the dog name, owner name, and picture and try again.  </string>
+
+    <!-- Pet Detail View -->
+    <string name="pet_details_title">Pet Details</string>
+
+    <!-- Errors -->
+    <string name="generic_error">Oh no! We had an error, please try again</string>
+</resources>
